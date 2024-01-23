@@ -2,7 +2,7 @@
 
 This repository contains a collection of Python programming assignments for an introductory programming course. Each script demonstrates fundamental programming concepts and problem-solving skills.
 
-Contents
+## Contents
 attendance_rate.py: A script to calculate the attendance rate of students. It takes inputs for the number of attendances, lateness, absences, and authorized absences, and then computes the attendance rate.
 
 grade_aggregation.py: A program that collects student data, including names and scores, and calculates their average score, highest score, and lowest score.
