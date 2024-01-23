@@ -1,34 +1,21 @@
-while True:
-    try:
-        attendance = int(input("出席回数："))
-        break
-    except:
-        print("数字を入力してください。")
-        continue
-while True:
-    try:
-        late = int(input("遅刻回数："))
-        break
-    except:
-        print("数字を入力してください。")
-        continue
-while True:
-    try:
-        absent = int(input("欠席回数："))
-        break
-    except:
-        print("数字を入力してください。")
-        continue
-while True:
-    try:
-        authorized_absence = int(input("公欠回数："))
-        break
-    except:
-        print("数字を入力してください。")
-        continue
+#Function to get and validate user input as an integer.
+def get_input(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("数字を入力してください。")
 
-classnum = attendance + late + absent + authorized_absence
-attended = attendance + late + authorized_absence -(late//3)
-rate = (attended/classnum) * 100
+# Get user inputs
+attendance_count = get_input("出席回数：")
+late_count = get_input("遅刻回数：")
+absence_count = get_input("欠席回数：")
+authorized_absence_count = get_input("公欠回数：")
 
-print("出席率は" + str(round(rate,2)) + "％です")
+# Calculate the total class number and adjusted attendance
+total_classes = attendance_count + late_count + absence_count + authorized_absence_count
+adjusted_attendance = attendance_count + late_count + authorized_absence_count - (late_count // 3)
+
+# Calculate and display the attendance rate
+attendance_rate = (adjusted_attendance / total_classes) * 100
+print(f"出席率は{round(attendance_rate, 2)}％です")
