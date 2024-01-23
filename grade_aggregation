@@ -1,0 +1,34 @@
+while True:
+    try:
+        attendance = int(input("出席回数："))
+        break
+    except:
+        print("数字を入力してください。")
+        continue
+while True:
+    try:
+        late = int(input("遅刻回数："))
+        break
+    except:
+        print("数字を入力してください。")
+        continue
+while True:
+    try:
+        absent = int(input("欠席回数："))
+        break
+    except:
+        print("数字を入力してください。")
+        continue
+while True:
+    try:
+        authorized_absence = int(input("公欠回数："))
+        break
+    except:
+        print("数字を入力してください。")
+        continue
+
+classnum = attendance + late + absent + authorized_absence
+attended = attendance + late + authorized_absence -(late//3)
+rate = (attended/classnum) * 100
+
+print("出席率は" + str(round(rate,2)) + "％です")
